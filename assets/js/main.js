@@ -25,15 +25,19 @@ console.log(rowEl);
 
 for (let i = 1; i <= 100; i++) {
   let special = "";
+  let bgColorCard = "bg-info";
   if (i % 3 == 0 && i % 5 == 0) {
     special = "Fizzbuzz";
+    bgColorCard = "bg-success";
   } else if (i % 3 == 0) {
     special = "Fizz";
+    bgColorCard = "bg-warning";
   } else if (i % 5 == 0) {
     special = "Buzz";
+    bgColorCard = "bg-danger";
   }
 
   console.log(`${i} ${special}`);
-  const colCardElement = `<div class="col"><div class="card p-3 bg-white">${i} ${special}</div></div>`;
+  const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${i} ${special}</div></div>`;
   rowEl.innerHTML += colCardElement;
 }
