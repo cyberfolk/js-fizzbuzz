@@ -32,6 +32,7 @@ console.log(fizzbuzzRowEl);
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  fizzbuzzRowEl.innerHTML = "";
   // get the input value
   const fizz = e.target.fizz.value;
   const buzz = e.target.buzz.value;
@@ -68,7 +69,6 @@ formEl.addEventListener("submit", function (e) {
     cardEl.innerText = special; //Aggiungo il contenuto della Card
 
     colElement.appendChild(cardEl);
-
     fizzbuzzRowEl.append(colElement);
   }
 });
