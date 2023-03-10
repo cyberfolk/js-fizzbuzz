@@ -26,12 +26,14 @@ console.log(rowEl);
 for (let i = 1; i <= 100; i++) {
   let special = `${i}`;
   let bgColorCard = "bg-info";
-  if (i % 3 == 0 && i % 5 == 0) {
-    special = "Fizzbuzz";
-    bgColorCard = "bg-success";
-  } else if (i % 3 == 0) {
+
+  if (i % 3 == 0) {
     special = "Fizz";
     bgColorCard = "bg-warning";
+    if (i % 5 == 0) {
+      special = "Fizzbuzz";
+      bgColorCard = "bg-success";
+    }
   } else if (i % 5 == 0) {
     special = "Buzz";
     bgColorCard = "bg-danger";
