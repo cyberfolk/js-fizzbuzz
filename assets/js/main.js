@@ -42,6 +42,21 @@ for (let i = 1; i <= 100; i++) {
   }
 
   console.log(`${i} ${special}`);
-  const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${j} ${special}</div></div>`;
-  rowEl.innerHTML += colCardElement;
+
+  /*   const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${j} ${special}</div></div>`;
+  rowEl.innerHTML += colCardElement; */
+
+  const colElement = document.createElement("div");
+  colElement.classList.add("col");
+  console.log(`colElement: ${colElement}. classe: ${colElement.classList}`);
+
+  const cardEl = document.createElement("div");
+  cardEl.classList.add("card", "p-3");
+  console.log(`cardEl: ${cardEl}. classe: ${cardEl.classList}`);
+
+  const colCardEl = colElement.appendChild(cardEl);
+  console.log(`colCardEl: ${colCardEl}`);
+
+  console.log(colCardEl);
+  rowEl.append(colCardEl);
 }
