@@ -39,19 +39,19 @@ for (let i = 1; i <= 100; i++) {
 
   console.log(`${i} ${special}`);
 
-  /*   const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${j} ${special}</div></div>`;
-  rowEl.innerHTML += colCardElement; */
+  // Modo 1 - Inserisco struttura tramite STRINGA
+  // const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${j} ${special}</div></div>`;
+  // rowEl.innerHTML += colCardElement;
 
+  // Modo 2 - Uso ADD e APPEND
   const colElement = document.createElement("div");
   colElement.classList.add("col");
-  console.log(`colElement: ${colElement}. classe: ${colElement.classList}`);
 
   const cardEl = document.createElement("div");
-  cardEl.classList.add("card", "p-3");
-  console.log(`cardEl: ${cardEl}. classe: ${cardEl.classList}`);
+  cardEl.classList.add("card", "p-3", bgColorCard);
+  cardEl.innerText = special; //Aggiungo il contenuto della Card
 
   colElement.appendChild(cardEl);
-  console.log(`colElement: ${colElement}. classe: ${colElement.classList}`);
 
   rowEl.append(colElement);
 }
