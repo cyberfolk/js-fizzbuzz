@@ -20,16 +20,20 @@
  * Applica stili differenti agli elementi aggiunti al DOM nel *BONUS 1*, a seconda che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz.
  * Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.*/
 
-console.log("funziona?");
+const rowEl = document.querySelector(".row");
+console.log(rowEl);
 
 for (let i = 1; i <= 100; i++) {
+  let special = "";
   if (i % 3 == 0 && i % 5 == 0) {
-    console.log(`${i} = FizzBuzz`);
+    special = "Fizzbuzz";
   } else if (i % 3 == 0) {
-    console.log(`${i} = Fizz`);
+    special = "Fizz";
   } else if (i % 5 == 0) {
-    console.log(`${i} = Buzz`);
-  } else {
-    console.log(`${i}`);
+    special = "Buzz";
   }
+
+  console.log(`${i} ${special}`);
+  const colCardElement = `<div class="col"><div class="card p-3 bg-white">${i} ${special}</div></div>`;
+  rowEl.innerHTML += colCardElement;
 }
