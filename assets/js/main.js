@@ -50,7 +50,8 @@ for (let i = 1; i <= 100; i++) {
   colElement.classList.add("col");
 
   const cardEl = document.createElement("div");
-  cardEl.classList.add("card", "p-1", bgColorCard);
+  cardEl.classList.add("card", "p-1", "text-center", bgColorCard);
+  cardEl.style.width = "4.5rem";
   cardEl.innerText = special; //Aggiungo il contenuto della Card
 
   colElement.appendChild(cardEl);
