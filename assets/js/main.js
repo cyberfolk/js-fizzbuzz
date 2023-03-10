@@ -21,20 +21,20 @@
  * Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.*/
 
 // Select dom element
-const fizzbuzz_rowEl = document.querySelector(".fizzbuzz_row");
+const fizzbuzzRowEl = document.querySelector(".fizzbuzz_row");
 const formEl = document.querySelector("form");
-const fizz_inputEl = document.getElementById("fizz_input");
-const buzz_inputEl = document.getElementById(".buzz_input");
+const fizzEl = document.querySelector("#fizz");
+const buzzEl = document.querySelector("#buzz");
 
-console.log(fizzbuzz_rowEl);
+console.log(fizzbuzzRowEl);
 /* ============================================================================ */
 
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // get the input value
-  const fizz = e.target.fizz_input.value;
-  const buzz = e.target.buzz_input.value;
+  const fizz = e.target.fizz.value;
+  const buzz = e.target.buzz.value;
 
   for (let i = 1; i <= 100; i++) {
     let special = `${i}`;
@@ -69,14 +69,14 @@ formEl.addEventListener("submit", function (e) {
 
     colElement.appendChild(cardEl);
 
-    fizzbuzz_rowEl.append(colElement);
+    fizzbuzzRowEl.append(colElement);
   }
 });
 
 formEl.addEventListener("reset", function (e) {
   console.log("ho cliccato su reset");
   // svuto il ticket
-  fizzbuzz_rowEl.innerHTML = "";
+  fizzbuzzRowEl.innerHTML = "";
 });
 
 /* ============================================================================ */
