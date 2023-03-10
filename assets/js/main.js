@@ -20,41 +20,63 @@
  * Applica stili differenti agli elementi aggiunti al DOM nel *BONUS 1*, a seconda che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz.
  * Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.*/
 
-const rowEl = document.querySelector(".row");
-console.log(rowEl);
+// Select dom element
+const fizzbuzz_rowEl = document.querySelector(".fizzbuzz_row");
+const formEl = document.querySelector("form");
+const fizz_inputEl = document.getElementById("fizz_input");
+const buzz_inputEl = document.getElementById(".buzz_input");
 
-for (let i = 1; i <= 100; i++) {
-  let special = `${i}`;
-  let bgColorCard = "bg-info";
+console.log(fizzbuzz_rowEl);
+/* ============================================================================ */
 
-  if (i % 3 == 0) {
-    special = "Fizz";
-    bgColorCard = "bg-warning";
-    if (i % 5 == 0) {
-      special = "Fizzbuzz";
-      bgColorCard = "bg-success";
+formEl.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // get the input value
+  const fizz = e.target.fizz_input.value;
+  const buzz = e.target.buzz_input.value;
+
+  for (let i = 1; i <= 100; i++) {
+    let special = `${i}`;
+    let bgColorCard = "bg-info";
+
+    if (i % fizz == 0) {
+      special = "Fizz";
+      bgColorCard = "bg-warning";
+      if (i % buzz == 0) {
+        special = "Fizzbuzz";
+        bgColorCard = "bg-success";
+      }
+    } else if (i % buzz == 0) {
+      special = "Buzz";
+      bgColorCard = "bg-danger";
     }
-  } else if (i % 5 == 0) {
-    special = "Buzz";
-    bgColorCard = "bg-danger";
+
+    console.log(`${i} ${special}`);
+
+    // Modo 1 - Inserisco struttura tramite STRINGA
+    // const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${j} ${special}</div></div>`;
+    // rowEl.innerHTML += colCardElement;
+
+    // Modo 2 - Uso ADD e APPEND
+    const colElement = document.createElement("div");
+    colElement.classList.add("col");
+
+    const cardEl = document.createElement("div");
+    cardEl.classList.add("card", "p-1", "text-center", bgColorCard);
+    cardEl.style.width = "4.5rem";
+    cardEl.innerText = special; //Aggiungo il contenuto della Card
+
+    colElement.appendChild(cardEl);
+
+    fizzbuzz_rowEl.append(colElement);
   }
+});
 
-  console.log(`${i} ${special}`);
+formEl.addEventListener("reset", function (e) {
+  console.log("ho cliccato su reset");
+  // svuto il ticket
+  fizzbuzz_rowEl.innerHTML = "";
+});
 
-  // Modo 1 - Inserisco struttura tramite STRINGA
-  // const colCardElement = `<div class="col"><div class="card p-3 ${bgColorCard} ">${j} ${special}</div></div>`;
-  // rowEl.innerHTML += colCardElement;
-
-  // Modo 2 - Uso ADD e APPEND
-  const colElement = document.createElement("div");
-  colElement.classList.add("col");
-
-  const cardEl = document.createElement("div");
-  cardEl.classList.add("card", "p-1", "text-center", bgColorCard);
-  cardEl.style.width = "4.5rem";
-  cardEl.innerText = special; //Aggiungo il contenuto della Card
-
-  colElement.appendChild(cardEl);
-
-  rowEl.append(colElement);
-}
+/* ============================================================================ */
