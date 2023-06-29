@@ -1,4 +1,14 @@
-# js-fizzbuzz
+# Fizzbuzz
+
+**Initial commit**: 10/03/23
+
+**Tecnologie:** Javascript, HTML, CSS e Bootstrap.
+
+🧨 Ecco a voi Fizzbuzz, un classicone, sempre realizzato per Boolean
+Per prima cosa viene generata una griglia numerata da 1 a 100 numeri, dopodichè l'utente deve impostare il numero "Fizz" e il numero "Buzz", tramite gli appositi input. Una volta premuto invio tutte le celle multiple del numero "Fizz" verranno riempite con la scritta "Fizz", stesso discorso anche per i multipli del numero "Buzz". Nel caso in cui un numero fosse multiplo sia del numero "Fizz" e del numero "Buzz" nella sua cella verrà visualizzata la scritta "FizzBuzz".
+
+🔗 Repository:
+https://github.com/cyberfolk/js-fizzbuzz
 
 ## Brief
 
