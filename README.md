@@ -2,7 +2,7 @@
 
 **Initial commit**: 10/03/23
 
-**Tecnologie:** Javascript, HTML, CSS e Bootstrap.
+**Technologies:** Javascript, HTML, CSS e Bootstrap.
 
 **Info**:🧨 Here is Fizzbuzz, a classic, also made for Boolean
 First, a grid numbered from 1 to 100 numbers is generated, after which the user must set the "Fizz" number and the "Buzz" number, using the appropriate inputs. Once you press enter, all the multiple cells of the "Fizz" number will be filled with the word "Fizz", the same goes for the multiples of the "Buzz" number. If a number is a multiple of both the "Fizz" number and the "Buzz" number, the writing "FizzBuzz" will be displayed in its cell.
